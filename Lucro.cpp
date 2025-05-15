@@ -1,21 +1,30 @@
 #include<bits/stdc++.h>
 using namespace std;
-void lucro(int n, int custopordia, int receita){
-    
+struct dados{
+    int receitadia;
+    int custodia;
     int lucrodia;
     int lucrototal;
+    int n;
+};
+int main(){
 
-    lucrototal = 0;
-    
+    int n;
+    dados vendas[100];
+    int i = 0;
+    int Lucrototal = 0;
+
     while(cin >> n){
-        cin >> custopordia;
-        cin >> receita;
-        lucrodia = receita - custopordia;
-        lucro(n,custopordia,receita);
-        lucrototal += lucrodia;
+        cin >> vendas[n].custodia;
+        cin >> vendas[n].receitadia;
+        vendas[n].lucrodia = vendas[n].receitadia - vendas[n].custodia;
+        Lucrototal += vendas[n].lucrodia;
+        i++;
+
+        // Process the data
     }
-    
-    cout << lucrototal << endl;
 
+    cout << Lucrototal << endl;
 
+    return 0;
 }
