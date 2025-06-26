@@ -1,43 +1,40 @@
-#include <iostream>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-int valor[3] = {60, 100, 120};
-int peso[3] = {10, 20, 30};
-int pd[50 + 5][3 + 5];
-int n = 3;
-int c = 50;
+long long int dp[10005]; // memoização
 
-// Retorna o valor máximo que pode ser colocado em uma mochila de capacidade C
-int mochila(int capacidade, int i)
-{
-    // Pd
-    if (pd[capacidade][i] != -1)
-        return pd[capacidade][i] != -1;
-
-    // Condição de parada
-    if (i == n || capacidade == 0)
+// Função para calcular a coleta máxima de moedas
+long long int coleta(long long int c[], int n, int i) {
+    if (i >= n)
         return 0;
 
-    // Se o peso do enésimo item é maior que a capacidade, pulamos o item
-    if (peso[i] > capacidade)
-        return pd[capacidade][i] = mochila(capacidade, i + 1);
+    if (dp[i] != -1)
+        return dp[i];
 
-    // Temos 2 opções do que fazer ao chegar no iteam atual:
-    int op1 = mochila(capacidade, i + 1); // Nao pegar o item atual
-    int op2 = valor[i] + mochila(capacidade - peso[i], i + 1); // Pegar o item atual
+    long long int op1 = coleta(c, n, i + 1);          // Pular o monstro atual
+    long long int op2 = c[i] + coleta(c, n, i + 2);   // Coletar moedas e pular um
 
-    // Retorna a melhor escolha
-    return pd[capacidade][i] = max(op1, op2);
+    return dp[i] = max(op1, op2);
 }
 
-int main()
-{
-    for (int i = 0; i <= c; i++)
-        for (int j = 0; j <= n; ++j)
-            pd[i][j] = -1;
+int main() {
+    int nc; // número de casos
+    int n;  // número de monstros
+    long long int c[10005]; // moedas dos monstros
 
-    cout << mochila(c, 0) << endl;
+    cin >> nc;
+
+    for (int i = 1; i <= nc; i++) {
+        cin >> n;
+
+        for (int j = 0; j < n; j++) {
+            cin >> c[j];
+        }
+
+        memset(dp, -1, sizeof(dp)); // zera a tabela de memoização
+
+        cout << "Case " << i << ": " << coleta(c, n, 0) << endl;
+    }
 
     return 0;
 }
