@@ -22,7 +22,7 @@ int main() {
             respostas.push_back(contador); // total de aumentos feitos
         }
     }
-    vector<int>::iterator it;
+    vector<long long int>::iterator it;
     // Corrigido: imprime as respostas corretamente
     for (it = respostas.begin(); it != respostas.end(); ++it) {
         cout << *it << endl; // imprime cada resposta em uma linha
