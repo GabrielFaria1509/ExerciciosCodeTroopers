@@ -1,4 +1,4 @@
-#include<bits/stdtr1c++.h>
+#include<bits/stdtrc++.h>
 using namespace std;
 int main(){
     int n; //casos de teste
