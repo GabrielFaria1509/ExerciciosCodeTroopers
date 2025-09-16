@@ -42,6 +42,12 @@ int removerBit(int n, int pos) {
     return n & ~(1 << pos);  // desliga o bit   //realiza um AND com a máscara invertida
     //se for 0 não altera nada
 }
+int left_shift(int n, int pos){
+    return n << pos;  //desloca os bits para a esquerda // aumenta o valor do número
+}
+int right_shift(int n, int pos){
+    return n >> pos;  //desloca os bits para a direita // reduz o valor do número
+}
 
 int main() {
     
@@ -69,4 +75,3 @@ int main() {
 
 
    
-
