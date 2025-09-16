@@ -48,6 +48,9 @@ int left_shift(int n, int pos){
 int right_shift(int n, int pos){
     return n >> pos;  //desloca os bits para a direita // reduz o valor do número
 }
+int ouexclusivo(int n, int m){
+    return n ^ m;  //realiza o ou exclusivo entre n e m
+}
 
 int main() {
     
@@ -67,7 +70,12 @@ int main() {
     n = removerBit(n, 3);
     cout << "Removendo bit 3 (decimal): " << n << endl;
     cout << "Removendo bit 3 (binario): " << bitset<4>(n) << endl;
-
+    
+    int m;
+    cout << "Digite outro numero: ";
+    cin >> m;
+    cout << "Realizando o ou exclusivo entre " << n << " e " << m << " (decimal): " << ouexclusivo(n, m) << endl;
+    cout << "Resultado em binario: " << bitset<12>(ouexclusivo(n,m)) << endl;
     return 0;
 }
 
