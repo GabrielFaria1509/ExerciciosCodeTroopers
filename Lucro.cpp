@@ -2,40 +2,44 @@
 using namespace std;
 
 int main() {
-    int n; // número de dias
-    int custoPorDia;
-    int receita[50];
     
-    while (cin >> n) {
-        cin >> custoPorDia;
+    int custopordia;
+    vector<int>receita;
+    int n;  //número de dias do circo na cidade
+
+    while(cin >> n){
+      cin >> custopordia;  //armazena custo por dia do circo
+      
+      for(int i = 0; i < n; i++){
+        int receitadia;
         
-        for (int i = 0; i < n; i++) {
-            cin >> receita[i];
-        }
-        
-        int max_lucro = 0;
-        int lucro_atual = 0;
-        
-        for (int i = 0; i < n; i++) {
-            // Calcula o lucro líquido para o dia i
-            int lucro_dia = receita[i] - custoPorDia;
-            
-            // Atualiza o lucro atual (soma contígua)
-            lucro_atual += lucro_dia;
-            
-            // Se o lucro atual ficar negativo, reinicia (melhor começar nova sequência)
-            if (lucro_atual < 0) {
-                lucro_atual = 0;
-            }
-            
-            // Atualiza o máximo encontrado
-            if (lucro_atual > max_lucro) {
-                max_lucro = lucro_atual;
-            }
-        }
-        
-        cout << max_lucro << endl;
+        cin >> receitadia;  //armazena receita por dia do circo
+        receita.push_back(receitadia);
+      }
+
+      int maxlucro = 0;
+      int lucroatual = 0;
+
+      for(int i = 0; i < n;i++){
+       int lucrodia = receita[i] - custopordia;
+       
+       lucroatual += lucrodia;
+
+       if(lucroatual < 0){
+        lucroatual = 0;
+       }
+       if(lucroatual > maxlucro){
+        maxlucro = lucroatual;
+       }
+      }
+
+      cout << maxlucro << endl;
+
+    maxlucro = 0;
+    receita.clear();
     }
-    
+
+
     return 0;
+      
 }
