@@ -1,0 +1,32 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+int main() {
+    vector<int> respostas;
+    int valor_digitado;
+
+    cout << "Digite as respostas (ou digite -1 para parar):\n";
+
+    while (true) {
+        cin >> valor_digitado;
+
+        // Se o usuario digitar -1, a gente quebra o loop e para de ler
+        if (valor_digitado == -1) {
+            break; 
+        }
+
+        // Se não for -1, salva a resposta no vector
+        respostas.push_back(valor_digitado);
+    }
+
+    cout << "\nLeitura finalizada! Total de respostas salvas: " << respostas.size() << "\n";
+
+  //
+  //respostas.empty():Retorna true se ele estiver vazio ou false se já tiver algo
+  //respostas.size();
+  //respostas.clear();
+
+    return 0;
+}
