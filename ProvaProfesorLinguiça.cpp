@@ -31,7 +31,7 @@ int main(){
     long long T; // Tempo da prova
 
     // Lê os dados iniciais
-    if (!(cin >> Q >> N >> T)) return 0;
+    cin >> Q >> N >> T;
 
     // Leitura das questões
     vector<Questao> questoes(Q);
