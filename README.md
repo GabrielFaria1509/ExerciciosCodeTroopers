@@ -1,8 +1,8 @@
 # 🚀 CodeTroopers - Programação Competitiva
 
-Este repositório contém as minhas soluções, algoritmos e códigos desenvolvidos durante os treinos e competições oficiais da **CodeTroopers**, a equipe de programação competitiva do **Inatel**. 
+Este repositório contém as soluções minhas e de meus colegas de equipe , algoritmos e códigos desenvolvidos durante os treinos e competições oficiais da **CodeTroopers**, a equipe de programação competitiva do **Inatel**. 
 
-O objetivo principal é documentar a minha evolução em resolução de problemas complexos, algoritmos avançados e estruturas de dados.
+O objetivo principal é documentar a evolução minha e de meus colegas  em resolução de problemas complexos, algoritmos avançados e estruturas de dados.
 
 ---
 
